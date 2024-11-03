@@ -1,0 +1,193 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#Projects{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+
+}
+
+.container{
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+
+.item-link{
+border: 2px solid #007bff;
+padding: 10px 30px;
+font-size: 18px;
+font-weight: 500;
+color: #007bff;
+cursor: pointer;
+border-radius: 30px
+}
+.items-link{
+  width: 60%;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  transition: .4s ease;
+}
+.item-link:hover{
+  background: #007bff;
+  color: #fff;
+}
+
+.menu-active{
+  background: #007bff;
+  color: #fff;
+}
+
+.gallery{
+display: grid;
+grid-template-columns: repeat(3,1fr);
+gap: 20px;
+}
+
+.project-img{
+border-radius: 12px;
+overflow:hidden;
+box-shadow: 0 0 4px rgba(175,175,175, 0.4);
+height: 14rem;
+animation: SclAnimation .4s ease;
+position: relative;
+}
+
+@keyframes SclAnimation{
+  0%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+
+.project-img:hover .overlay{
+  top:0;
+
+}
+
+.overlay{
+ height: 100%;
+ width: 100%;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ background: linear-gradient(transparent, #007bff);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ gap:10px;
+ transition: .4s ease;
+}
+.overlay h4{
+  font-size: 20px;
+  color: #fff;
+
+}
+.overlay p{
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  width: 90%;
+
+}
+
+.action-aria{
+display: flex;
+align-items: center;
+gap: 10px;
+
+}
+
+.btn{
+display: inline-block;
+width: fit-content;
+padding: 10px 20px;
+background: #fff;
+border-radius: 12px;
+text-decoration: none;
+color: #007bff;
+font-size: 16px;
+font-weight: 500;
+border: 1px solid transparent;
+transition: .4s ease;
+
+}
+
+.btn:hover{
+  background: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+
+.project-img:hover img{
+  transform: scale(1.1);
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: .4s ease;
+}
+
+
+
+@media (max-width: 1024px) {
+  .container{
+    width: 90%;
+
+  }
+  .item-links{
+    width: 90%;
+
+  }
+}
+
+@media (max-width: 991px) {
+  .items-links{
+    width: 100%;
+  }
+
+  .gallery{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .items-links{
+    justify-content: space-between;
+    gap: 0;
+  }
+  .gallery{
+    grid-template-columns: 1fr; 
+  }
+
+  .project-img{
+    height: max-content;
+
+  }
+
+}
+
+.project-img video {
+  width: 100%;      /* Make the video take up the full width of the container */
+  height: auto;     /* Adjust the height proportionally */
+  object-fit: cover; /* Ensures the video fills the container, cropping if necessary */
+}
